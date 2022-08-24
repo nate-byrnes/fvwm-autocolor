@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 import random
 import os
@@ -6,7 +8,9 @@ from extcolors import command
 from colour import Color
 
 
-imgdir = os.environ.get('FAT_IMG_DIR', '/home/nate/.fvwm/bg')
+home = os.environ.get('HOME', '.')
+fvwmdir = os.environ.get('FVWM_USERDIR', home + os.pathsep + ".fvwm")
+imgdir = os.environ.get('FAT_IMG_DIR', fvwmdir + os.pathsep + 'bg')
 cachedir = os.environ.get('FAT_CACHE_DIR', imgdir)
 swatchdir = os.environ.get('FAT_SWATCH_DIR', cachedir)
 saveswatches = bool(int(os.environ.get('FAT_SAVE_SWATCH', '0')))
@@ -145,6 +149,7 @@ def send_colorsets(img):
    setbg(img)
    # fvwmcmd(f"DestroyMenu NewBGFromRand\nAddToMenu NewBGFromRand ImageFile Title\n+ {img} Nop\nPopup NewBGFromRand")
    # os.system("/usr/bin/feh " + imgdir + '/swatches/' + img.split('/')[-1] + '.png')
+
 
 def sel_rand_img():
    files = os.listdir(imgdir)
