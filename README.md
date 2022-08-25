@@ -43,3 +43,14 @@ AddToFunc   StartFunction
 + I Module FvwmCommandS
 + I Test (x $[FVWM_USERDIR]/autotheme.py) Exec exec $[FVWM_USERDIR]/autotheme.py $[FVWM_USERDIR]/bg/square-tiles.jpg
 ```
+
+# Screenshots
+
+![Tile](/repository/screenshots/tiles.png?raw=true "Tiles")
+
+![grey](/repository/screenshots/grey.png?raw=true "Grey")
+
+![Blossom Tree](/repository/screenshots/fog_bloom.png?raw=true "Tree")
+
+![Green](/repository/screenshots/green2.png?raw=true "Green")
+
