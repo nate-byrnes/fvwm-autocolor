@@ -7,10 +7,10 @@ import extcolors
 from extcolors import command
 from colour import Color
 
-
+x_display = os.environ.get("DISPLAY", ":0.0")
 home = os.environ.get('HOME', '.')
-fvwmdir = os.environ.get('FVWM_USERDIR', home + os.pathsep + ".fvwm")
-imgdir = os.environ.get('FAT_IMG_DIR', fvwmdir + os.pathsep + 'bg')
+fvwmdir = os.environ.get('FVWM_USERDIR', home + os.path.sep + ".fvwm")
+imgdir = os.environ.get('FAT_IMG_DIR', fvwmdir + os.path.sep + 'bg')
 cachedir = os.environ.get('FAT_CACHE_DIR', imgdir)
 swatchdir = os.environ.get('FAT_SWATCH_DIR', cachedir)
 saveswatches = bool(int(os.environ.get('FAT_SAVE_SWATCH', '0')))
@@ -57,9 +57,11 @@ def setbg(img):
 
 
 def extract_colorsets(img):
-   imgfname = img.split(os.pathsep)[:-1]
-   cachefname = cachedir + os.pathsep + imgfname + ".colors"
-   swatchfname = swatchdir + os.pathsep + imgfname + ".png"
+   imgfname = img.split(os.path.sep)[-1]
+   cachefname = cachedir + os.path.sep + imgfname + ".colors"
+   swatchfname = swatchdir + os.path.sep + imgfname + ".png"
+
+   print(f"{imgfname} {cachefname} {swatchfname}")
 
    colors, px = extcolors.extract_from_path(img, limit=4)
    if saveswatches:
@@ -113,8 +115,10 @@ def extract_colorsets(img):
 
 
 def send_colorsets(img):
-   imgfname = img.split(os.pathsep)[:-1]
-   cachefname = cachedir + os.pathsep + imgfname + ".colors"
+   imgfname = img.split(os.path.sep)[-1]
+   cachefname = cachedir + os.path.sep + imgfname + ".colors"
+
+   print(f"- {img} - {imgfname} - {cachefname} - ")
 
    try:
       with open(cachefname, 'r') as f:
@@ -155,10 +159,11 @@ def sel_rand_img():
    files = os.listdir(imgdir)
    files = [x for x in files if not x.endswith('.colors')]
    img = files[int(random.random() * len(files))]
-   send_colorsets(imgdir + '/' + img)
+   send_colorsets(imgdir + os.path.sep + img)
 
 if __name__ == '__main__':
-   os.environ["DISPLAY"] = ":0.0"
+   # Set the display so this can run in a cronjob if desired...
+   os.environ["DISPLAY"] = x_display
    if sys.argv[1:]:
       send_colorsets(sys.argv[1])
    else:
