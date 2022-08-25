@@ -46,11 +46,11 @@ AddToFunc   StartFunction
 
 # Screenshots
 
-![Tile](/nate-byrnes/fvwm-autocolor/main/screenshots/tiles.png?raw=true "Tiles")
+![Tile](/main/screenshots/tiles.png?raw=true "Tiles")
 
-![grey](/nate-byrnes/fvwm-autocolor/main/screenshots/grey.png?raw=true "Grey")
+![grey](/main/screenshots/grey.png?raw=true "Grey")
 
-![Blossom Tree](/nate-byrnes/fvwm-autocolor/main/screenshots/fog_bloom.png?raw=true "Tree")
+![Blossom Tree](/main/screenshots/fog_bloom.png?raw=true "Tree")
 
-![Green](/nate-byrnes/fvwm-autocolor/main/screenshots/green2.png?raw=true "Green")
+![Green](/main/screenshots/green2.png?raw=true "Green")
 
