@@ -46,11 +46,11 @@ AddToFunc   StartFunction
 
 # Screenshots
 
-![Tile](/main/screenshots/tiles.png?raw=true "Tiles")
+![Tile](/screenshots/tiles.png?raw=true "Tiles")
 
-![grey](/main/screenshots/grey.png?raw=true "Grey")
+![grey](/screenshots/grey.png?raw=true "Grey")
 
-![Blossom Tree](/main/screenshots/fog_bloom.png?raw=true "Tree")
+![Blossom Tree](/screenshots/fog_bloom.png?raw=true "Tree")
 
-![Green](/main/screenshots/green2.png?raw=true "Green")
+![Green](/screenshots/green2.png?raw=true "Green")
 
