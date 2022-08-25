@@ -54,3 +54,7 @@ AddToFunc   StartFunction
 
 ![Green](/screenshots/green2.png?raw=true "Green")
 
+# TODO
+1. Add some logic to force a bit more contrast, especially when dealing with repetitions and very dark colors
+2. Develop way to detect and separate text that blends into BG
+3. Maybe grab more than just 4 colors from image and find a clever way to auto select them...
